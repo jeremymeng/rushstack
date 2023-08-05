@@ -1,0 +1,46 @@
+# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
+
+name: Run rush install and build on azure-sdk-for-js repo
+
+on:
+  pull_request:
+    branches:
+      - main
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [18.x, 20.x]
+        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Git config user
+        run: |
+          git config --local user.name "azjssdkbot"
+          git config --local user.email "azjssdkbot@users.noreply.github.com"
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: npm install -g @microsoft/rush
+      - run: rush update
+      - run: rush build -t @microsoft/rush
+      - name: Clone azure-sdk-for-js repository
+        uses: actions/checkout@v4
+        with:
+          repository: Azure/azure-sdk-for-js
+          path: jssdk
+          fetch-depth: 1
+
+      - run: pushd jssdk && node ../apps/rush/lib/start-dev.js update
+      - run: pushd jssdk && node ../apps/rush/lib/start-dev.js update --full
+      - run: pushd jssdk && node ../apps/rush/lib/start-dev.js build
+      - run: git --no-pager diff

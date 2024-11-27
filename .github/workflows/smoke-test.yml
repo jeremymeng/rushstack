@@ -37,10 +37,11 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: Azure/azure-sdk-for-js
+          ref: pnpm-9.14.2
           path: jssdk
           fetch-depth: 1
 
-      - run: pushd jssdk && node ../apps/rush/lib/start-dev.js update
-      - run: pushd jssdk && node ../apps/rush/lib/start-dev.js update --full
+      - run: pushd jssdk && node ../apps/rush/lib/start-dev.js update --recheck
+      - run: pushd jssdk && node ../apps/rush/lib/start-dev.js update --recheck --full
       - run: pushd jssdk && node ../apps/rush/lib/start-dev.js build
       - run: git --no-pager diff

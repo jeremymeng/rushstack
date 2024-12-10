@@ -43,5 +43,7 @@ jobs:
 
       - run: pushd jssdk && node ../apps/rush/lib/start-dev.js update --recheck
       - run: pushd jssdk && node ../apps/rush/lib/start-dev.js update --recheck --full
+      - run: pushd jssdk && node ../apps/rush/lib/start-dev.js install
+      - run: pushd jssdk && node ../apps/rush/lib/start-dev.js update
       - run: pushd jssdk && node ../apps/rush/lib/start-dev.js build
       - run: git --no-pager diff

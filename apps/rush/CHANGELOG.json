@@ -2,6 +2,51 @@
   "name": "@microsoft/rush",
   "entries": [
     {
+      "version": "5.155.1",
+      "tag": "@microsoft/rush_v5.155.1",
+      "date": "Fri, 27 Jun 2025 19:57:04 GMT",
+      "comments": {
+        "none": [
+          {
+            "comment": "Fix pnpm-sync caused .modules.yaml ENOENT during install"
+          }
+        ]
+      }
+    },
+    {
+      "version": "5.155.0",
+      "tag": "@microsoft/rush_v5.155.0",
+      "date": "Fri, 13 Jun 2025 16:10:38 GMT",
+      "comments": {
+        "none": [
+          {
+            "comment": "Add support for PNPM v9 to the pnpm-sync feature."
+          }
+        ]
+      }
+    },
+    {
+      "version": "5.154.0",
+      "tag": "@microsoft/rush_v5.154.0",
+      "date": "Tue, 10 Jun 2025 18:45:59 GMT",
+      "comments": {
+        "none": [
+          {
+            "comment": "Introduce a `@rushstack/rush-bridge-cache-plugin` package that adds a `--set-cache-only` flag to phased commands, which sets the cache entry without performing the operation."
+          },
+          {
+            "comment": "Update the `CredentialCache` options object to add support for custom cache file paths. This is useful if `CredentialCache` is used outside of Rush."
+          },
+          {
+            "comment": "PNPMv10 support: SHA256 hashing for dependencies paths lookup"
+          },
+          {
+            "comment": "Add Linux/MacOS support for new 'virtual-store-dir-max-length'"
+          }
+        ]
+      }
+    },
+    {
       "version": "5.153.2",
       "tag": "@microsoft/rush_v5.153.2",
       "date": "Tue, 13 May 2025 20:33:12 GMT",

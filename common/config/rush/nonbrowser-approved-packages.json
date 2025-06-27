@@ -232,7 +232,7 @@
     },
     {
       "name": "@rushstack/mcp-server",
-      "allowedCategories": [ "tests" ]
+      "allowedCategories": [ "libraries", "tests" ]
     },
     {
       "name": "@rushstack/module-minifier",
@@ -495,6 +495,10 @@
       "allowedCategories": [ "tests" ]
     },
     {
+      "name": "chokidar",
+      "allowedCategories": [ "libraries" ]
+    },
+    {
       "name": "cli-table",
       "allowedCategories": [ "libraries" ]
     },
@@ -539,11 +543,19 @@
       "allowedCategories": [ "libraries", "tests", "vscode-extensions" ]
     },
     {
+      "name": "eslint-import-resolver-node",
+      "allowedCategories": [ "libraries" ]
+    },
+    {
       "name": "eslint-plugin-deprecation",
       "allowedCategories": [ "libraries" ]
     },
     {
       "name": "eslint-plugin-header",
+      "allowedCategories": [ "libraries" ]
+    },
+    {
+      "name": "eslint-plugin-headers",
       "allowedCategories": [ "libraries" ]
     },
     {
@@ -663,10 +675,6 @@
       "allowedCategories": [ "libraries" ]
     },
     {
-      "name": "chokidar",
-      "allowedCategories": [ "libraries" ]
-    },
-    {
       "name": "ignore",
       "allowedCategories": [ "libraries" ]
     },
@@ -716,6 +724,10 @@
     },
     {
       "name": "js-yaml",
+      "allowedCategories": [ "libraries" ]
+    },
+    {
+      "name": "json-stable-stringify-without-jsonify",
       "allowedCategories": [ "libraries" ]
     },
     {

@@ -1,6 +1,6 @@
 {
   "name": "@rushstack/debug-certificate-manager",
-  "version": "1.4.36",
+  "version": "1.4.37",
   "description": "Cross-platform functionality to create debug ssl certificates.",
   "main": "lib/index.js",
   "typings": "dist/debug-certificate-manager.d.ts",
@@ -23,6 +23,7 @@
   "devDependencies": {
     "@rushstack/heft": "workspace:*",
     "@types/node-forge": "1.0.4",
+    "eslint": "~9.25.1",
     "local-node-rig": "workspace:*"
   }
 }
